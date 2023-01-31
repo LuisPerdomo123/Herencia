@@ -8,12 +8,12 @@ package domain;
  *
  * @author lepo9
  */
-public class Persona {
+public class Persona extends Object{//Extiendoe de manera automatica de la clase Object
 
-    private String nombre;//Los atributos protectes pueden ser accedidos por las clases hijas aun si se encuenran en otro paquete
-    private char genero;
-    private int edad;
-    private String direccion;
+    protected String nombre;//Los atributos protectes pueden ser accedidos por las clases hijas aun si se encuenran en otro paquete
+    protected char genero;
+    protected int edad;
+    protected String direccion;
 
     public Persona() {
 
@@ -63,7 +63,7 @@ public class Persona {
         this.edad = edad;
     }
 
-    @Override
+    @Override//Indicar sobreescribiendo el metodo toString de la clase padre Object
     public String toString() {
         return "Persona{" + "nombre=" + nombre + ", genero=" + genero + ", edad=" + edad + ", direccion=" + direccion + '}';
     }
