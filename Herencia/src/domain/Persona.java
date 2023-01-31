@@ -25,6 +25,7 @@ public class Persona extends Object{//Extiendoe de manera automatica de la clase
     }
 
     public Persona(String nombre, char genero, int edad, String direccion) {
+        super(); //lllamada a la clase padre object
         this.nombre = nombre;
         this.genero = genero;
         this.edad = edad;
@@ -63,10 +64,20 @@ public class Persona extends Object{//Extiendoe de manera automatica de la clase
         this.edad = edad;
     }
 
-    @Override//Indicar sobreescribiendo el metodo toString de la clase padre Object
+    @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", genero=" + genero + ", edad=" + edad + ", direccion=" + direccion + '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Persona{");
+        sb.append("nombre=").append(nombre);
+        sb.append(", genero=").append(genero);
+        sb.append(", edad=").append(edad);
+        sb.append(", direccion=").append(direccion);
+        sb.append(", =").append(super.toString());
+        sb.append('}');
+        return sb.toString();
     }
+
+    
 
     
 }
