@@ -19,6 +19,7 @@ public class Persona extends Object{//Extiendoe de manera automatica de la clase
 
     }
 
+    //Sobrecarga de constructores
     public Persona(String nombre) {
 
         this.nombre = nombre;

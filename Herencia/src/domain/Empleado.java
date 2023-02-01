@@ -15,9 +15,23 @@ public class Empleado extends Persona {
     private double sueldo;
     private static int contadorEmpleado;
 
-    public Empleado(String nombre, double sueldo) {
-        super(nombre);//Reciviendo argumento desde la clase empleado
+    
+    public Empleado(){
+    
+        super();//Llamada a la clase padre persona. Pero no es necesario escribirlo por que se hace el llamado implicito.
         this.idEmpleado = ++Empleado.contadorEmpleado;
+    }
+    
+    public Empleado(String nombre, double sueldo) {
+        /*
+        Con this se esta llamando al contructor vavio de la clase empleado.
+        This() no puede estar al mismo tiempo con el llamado al constructor super().
+        Para inicializar los atributos de la clase padre, se llama directamente los atributos
+        a traves de this.
+        */
+        this();
+        //super(nombre);//Reciviendo argumento desde la clase empleado
+        this.nombre = nombre;
         this.sueldo = sueldo;
         
     }
